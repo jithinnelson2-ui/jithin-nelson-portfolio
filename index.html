@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Jithin Nelson - Full-Stack Developer, Digital Marketing & Social Media Specialist portfolio">
+    <meta name="author" content="Jithin Nelson">
+    <title>Jithin Nelson | Full-Stack Developer & Digital Marketer</title>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-purple: #8A2BE2;
+            --secondary-purple: #9B30FF;
+            --light-purple: #D8BFD8;
+            --dark-purple: #4B0082;
+            --accent-color: #FF6B8B;
+            --dark-color: #1A1A2E;
+            --light-color: #F8F9FA;
+            --gray-color: #6C757D;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(138, 43, 226, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 107, 139, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(75, 0, 130, 0.05) 0%, transparent 60%);
+            z-index: -1;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: white;
+        }
+        
+        a {
+            color: var(--primary-purple);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--secondary-purple);
+            text-decoration: none;
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+            color: white;
+            background: linear-gradient(90deg, #8A2BE2, #FF6B8B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-purple), var(--accent-color));
+            bottom: -15px;
+            left: 0;
+            border-radius: 5px;
+        }
+        
+        .section-title.center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-subtitle {
+            color: var(--light-purple);
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        /* Custom Navbar - Glassmorphism */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+        
+        .navbar-brand span {
+            background: linear-gradient(90deg, #8A2BE2, #FF6B8B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            margin: 0 10px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: white;
+        }
+        
+        .navbar-nav .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-purple), var(--accent-color));
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease;
+            border-radius: 3px;
+        }
+        
+        .navbar-nav .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        /* Buttons - Glassmorphism */
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-primary {
+            background: rgba(138, 43, 226, 0.2);
+            color: white;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .btn-primary:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(138, 43, 226, 0.8), rgba(155, 48, 255, 0.8));
+            transition: width 0.5s ease;
+            z-index: -1;
+        }
+        
+        .btn-primary:hover:before {
+            width: 100%;
+        }
+        
+        .btn-primary:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(138, 43, 226, 0.3);
+        }
+        
+        .btn-outline-primary {
+            color: white;
+            border: 1px solid rgba(138, 43, 226, 0.5);
+            background: rgba(138, 43, 226, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .btn-outline-primary:hover {
+            background: rgba(138, 43, 226, 0.3);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(138, 43, 226, 0.2);
+        }
+        
+        /* Header/Hero Section - Enhanced */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            z-index: 10;
+            position: relative;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: white;
+            line-height: 1.2;
+            background: linear-gradient(90deg, #8A2BE2, #FF6B8B, #8A2BE2);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 3s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            font-weight: 300;
+        }
+        
+        .highlight {
+            background: linear-gradient(90deg, #8A2BE2, #FF6B8B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+        
+        .hero-btns {
+            margin-top: 2rem;
+        }
+        
+        /* Floating Glass Particles */
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: float 15s infinite linear;
+        }
+        
+        .floating-element:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 70%;
+            left: 80%;
+            animation-delay: 3s;
+        }
+        
+        .floating-element:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 85%;
+            animation-delay: 6s;
+        }
+        
+        .floating-element:nth-child(4) {
+            width: 120px;
+            height: 120px;
+            top: 80%;
+            left: 15%;
+            animation-delay: 9s;
+        }
+        
+        .floating-element:nth-child(5) {
+            width: 60px;
+            height: 60px;
+            top: 40%;
+            left: 5%;
+            animation-delay: 12s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+            25% {
+                transform: translateY(-40px) rotate(90deg) scale(1.1);
+            }
+            50% {
+                transform: translateY(0) rotate(180deg) scale(1);
+            }
+            75% {
+                transform: translateY(40px) rotate(270deg) scale(0.9);
+            }
+        }
+        
+        /* About Section - Glassmorphism */
+        .about-content {
+            padding-right: 30px;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .skill-item {
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 30px;
+            margin: 0 10px 15px 0;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        
+        .skill-item:hover {
+            background: rgba(138, 43, 226, 0.3);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.2);
+            border-color: rgba(138, 43, 226, 0.5);
+        }
+        
+        .about-graphic {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .graphic-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+        
+        .rotating-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px dashed rgba(138, 43, 226, 0.3);
+            animation: rotate 20s linear infinite;
+        }
+        
+        .inner-circle {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .graphic-icon {
+            font-size: 8rem;
+            background: linear-gradient(90deg, #8A2BE2, #FF6B8B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+        }
+        
+        /* Services Section - Neo-morphism */
+        .services-section {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 30px;
+            margin: 0 20px;
+            padding: 80px 40px;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px 30px;
+            height: 100%;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background: linear-gradient(to bottom, var(--primary-purple), var(--accent-color));
+            transition: height 0.5s ease;
+        }
+        
+        .service-card:hover:before {
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 
+                0 20px 40px rgba(138, 43, 226, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border-color: rgba(138, 43, 226, 0.3);
+        }
+        
+        .service-icon {
+            width: 90px;
+            height: 90px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.8), rgba(255, 107, 139, 0.8));
+            color: white;
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .service-desc {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Experience & Education Section */
+        .experience-section {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 30px;
+            margin: 0 20px;
+            padding: 80px 40px;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--primary-purple), var(--accent-color));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+        
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 70px;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 70px;
+        }
+        
+        .timeline-dot {
+            width: 24px;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 5px solid rgba(138, 43, 226, 0.8);
+            border-radius: 50%;
+            position: absolute;
+            right: -12px;
+            top: 25px;
+            z-index: 1;
+            box-shadow: 0 0 0 5px rgba(138, 43, 226, 0.1);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-left: 5px solid var(--primary-purple);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateX(10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(138, 43, 226, 0.2);
+        }
+        
+        .timeline-title {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: white;
+        }
+        
+        .timeline-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .timeline-desc {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+        
+        .timeline-desc ul {
+            padding-left: 20px;
+        }
+        
+        .timeline-desc li {
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Certificates Section - Glassmorphism */
+        .certificates-section {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 30px;
+            margin: 0 20px;
+            padding: 80px 40px;
+        }
+        
+        .certificate-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .certificate-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(138, 43, 226, 0.3);
+            border-color: rgba(138, 43, 226, 0.3);
+        }
+        
+        .certificate-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .certificate-card:hover .certificate-icon {
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.8), rgba(255, 107, 139, 0.8));
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
+        }
+        
+        .certificate-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .certificate-issuer {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        
+        .certificate-date {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .certificate-link {
+            display: inline-block;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .certificate-link:hover {
+            color: var(--accent-color);
+            transform: translateX(5px);
+        }
+        
+        /* Contact Section - Glassmorphism */
+        .contact-section {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 30px;
+            margin: 0 20px;
+            padding: 80px 40px;
+        }
+        
+        .contact-info-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .contact-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(138, 43, 226, 0.3);
+            border-color: rgba(138, 43, 226, 0.3);
+        }
+        
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2.2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-card:hover .contact-icon {
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.8), rgba(255, 107, 139, 0.8));
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
+        }
+        
+        .contact-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .contact-details {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        .whatsapp-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #25D366, #128C7E);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin: 0 8px;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        
+        .social-link:hover {
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.8), rgba(255, 107, 139, 0.8));
+            color: white;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.2);
+        }
+        
+        /* Footer */
+        .footer {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: white;
+            padding: 70px 0 30px;
+            margin-top: 100px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer h5 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 8px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .graphic-container {
+                width: 350px;
+                height: 350px;
+            }
+            
+            .inner-circle {
+                width: 260px;
+                height: 260px;
+            }
+            
+            .graphic-icon {
+                font-size: 6rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .graphic-container {
+                width: 300px;
+                height: 300px;
+                margin-top: 50px;
+            }
+            
+            .inner-circle {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .graphic-icon {
+                font-size: 5rem;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 20px;
+            }
+            
+            .timeline-item:nth-child(odd), 
+            .timeline-item:nth-child(even) {
+                left: 0;
+                padding-right: 20px;
+                padding-left: 70px;
+            }
+            
+            .timeline-dot {
+                left: 20px !important;
+                right: auto;
+            }
+            
+            .contact-info-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-section,
+            .experience-section,
+            .certificates-section,
+            .contact-section {
+                margin: 0 10px;
+                padding: 60px 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .graphic-container {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .inner-circle {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .graphic-icon {
+                font-size: 4rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .graphic-container {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .inner-circle {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .graphic-icon {
+                font-size: 3.5rem;
+            }
+            
+            .service-card, .contact-card, .certificate-card {
+                padding: 30px 20px;
+            }
+            
+            .services-section,
+            .experience-section,
+            .certificates-section,
+            .contact-section {
+                margin: 0 5px;
+                padding: 50px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="100" id="home">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Jithin<span>Nelson</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#certificates">Certificates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ml-md-3">
+                        <a href="#contact" class="btn btn-primary">Hire Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+                        <p class="section-subtitle" style="color: var(--light-purple);">Hello, I'm</p>
+                        <h1 class="hero-title">Jithin Nelson</h1>
+                        <p class="hero-subtitle">Full-Stack Developer | Digital Marketing & SEO Specialist | Social Media Content Strategist</p>
+                        <p class="hero-subtitle">Full-Stack Developer with strong front-end and UI/UX skills, experienced in Shopify development, theme customization, and building <span class="highlight">high-converting e-commerce stores</span>. Skilled in social media content creation and digital marketing.</p>
+                        <div class="hero-btns">
+                            <a href="#contact" class="btn btn-primary mr-3">Contact Me</a>
+                            <a href="#about" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="graphic-container" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                        <div class="rotating-circle"></div>
+                        <div class="inner-circle">
+                            <i class="fas fa-code graphic-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content" data-aos="fade-right" data-aos-duration="1000">
+                        <p class="section-subtitle">About Me</p>
+                        <h2 class="section-title">Professional Profile</h2>
+                        <p style="color: rgba(255, 255, 255, 0.8);">Full-Stack Developer with strong front-end and UI/UX skills, experienced in Shopify development, theme customization, and building high-converting e-commerce stores. Skilled in social media content creation and digital marketing, delivering visually engaging, SEO-optimized solutions with clear communication and strong problem-solving abilities.</p>
+                        
+                        <h5 class="mt-4 mb-3" style="color: white;">Technical Skills</h5>
+                        <div class="skills-container">
+                            <span class="skill-item">Shopify</span>
+                            <span class="skill-item">HTML5/CSS3</span>
+                            <span class="skill-item">JavaScript (ES6+)</span>
+                            <span class="skill-item">React</span>
+                            <span class="skill-item">Node.js</span>
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">Java</span>
+                            <span class="skill-item">MySQL</span>
+                            <span class="skill-item">MongoDB</span>
+                            <span class="skill-item">Adobe Photoshop</span>
+                            <span class="skill-item">Adobe InDesign</span>
+                            <span class="skill-item">Canva</span>
+                            <span class="skill-item">Digital Marketing</span>
+                            <span class="skill-item">SEO Optimization</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-graphic" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                        <div class="graphic-container">
+                            <div class="rotating-circle"></div>
+                            <div class="inner-circle">
+                                <i class="fas fa-laptop-code graphic-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+                <p class="section-subtitle">My Services</p>
+                <h2 class="section-title center">What I Do</h2>
+                <p class="mb-5" style="max-width: 700px; margin: 0 auto; color: rgba(255, 255, 255, 0.8);">I offer a comprehensive range of services to help businesses establish a strong online presence and drive growth through technology and marketing.</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h4 class="service-title">Shopify Development</h4>
+                        <p class="service-desc">Theme Customization (Liquid, HTML5, CSS3, JavaScript), App Integration, Backend Setup, SEO Optimization for high-converting e-commerce stores.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h4 class="service-title">Front-End Development</h4>
+                        <p class="service-desc">HTML5, CSS3, JavaScript (ES6+), React, Bootstrap, Responsive & Mobile-First Design for modern, engaging web experiences.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h4 class="service-title">Back-End Development</h4>
+                        <p class="service-desc">Node.js, Python, Java with MySQL, PostgreSQL, MongoDB databases for robust, scalable applications.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 class="service-title">Digital Marketing & SEO</h4>
+                        <p class="service-desc">Google Ads Certified professional with expertise in SEO optimization, digital marketing strategies, and analytics tracking.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h4 class="service-title">Social Media Content</h4>
+                        <p class="service-desc">Creating engaging social media graphics, promotional materials, and content strategies using Adobe Creative Suite and Canva.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4 class="service-title">E-commerce Optimization</h4>
+                        <p class="service-desc">Improving site speed, mobile responsiveness, and overall performance to enhance user experience and increase conversion rates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section" id="experience">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+                <p class="section-subtitle">Work Experience</p>
+                <h2 class="section-title center">My Professional Journey</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">Freelance Designer & Developer</h4>
+                        <p class="timeline-subtitle">Self-Employed, Kerala | 12/2024 - Present</p>
+                        <div class="timeline-desc">
+                            <ul>
+                                <li>Customized Shopify themes to align with brand identity and improve user experience</li>
+                                <li>Built and optimized key pages including Home, Product Display Pages (PDP), Collections, and Landing Pages</li>
+                                <li>Integrated and configured Shopify apps for payments, reviews, email marketing, and subscriptions</li>
+                                <li>Enhanced site speed and mobile responsiveness, improving overall performance and SEO</li>
+                                <li>Designed marketing assets (logos, banners, social media graphics) to support store branding and promotions</li>
+                                <li>Provided ongoing maintenance, bug fixes, and layout adjustments to ensure store reliability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">Graphic & Social Media Designer Cum Sales Coordinator</h4>
+                        <p class="timeline-subtitle">Zaman Al Kitab, Sharjah | 07/2023 - 11/2024</p>
+                        <div class="timeline-desc">
+                            <ul>
+                                <li>Created digital and print promotional materials, boosting customer engagement by 25%</li>
+                                <li>Managed POS operations with 99.9% accuracy, gaining insight into customer purchasing behavior</li>
+                                <li>Assisted in inventory and product data management, skills transferable to Shopify product and collection setup</li>
+                                <li>Improved in-store workflow, reducing wait times—translates to focus on seamless online user experience</li>
+                                <li>Coordinated daily posting, promotions, and analytics tracking to support sales and marketing goals</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section class="certificates-section" id="certificates">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+                <p class="section-subtitle">Certifications</p>
+                <h2 class="section-title center">My Certificates</h2>
+                <p class="mb-5" style="max-width: 700px; margin: 0 auto; color: rgba(255, 255, 255, 0.8);">Professional certifications that validate my expertise in full-stack development, digital marketing, and multimedia design.</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="certificate-card">
+                        <div class="certificate-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <h4 class="certificate-title">Google Ads Apps Certification</h4>
+                        <p class="certificate-issuer">Google Digital Academy (Skillshop)</p>
+                        <p class="certificate-date">ID: 168513557 | 12/2025 - 12/2026</p>
+                        </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="certificate-card">
+                        <div class="certificate-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4 class="certificate-title">Full Stack Developer Program</h4>
+                        <p class="certificate-issuer">Capital Infosys, Kerala</p>
+                        <p class="certificate-date">Post Graduate Diploma | 12/2024 - 10/2025</p>
+                        
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="certificate-card">
+                        <div class="certificate-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h4 class="certificate-title">Multimedia Course Certificate</h4>
+                        <p class="certificate-issuer">Professional Certification</p>
+                        <p class="certificate-date">06/2020 - 07/2023</p>
+                        
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <div class="certificate-card">
+                        <div class="certificate-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h4 class="certificate-title">Certificate in Office Automation</h4>
+                        <p class="certificate-issuer">Professional Certification</p>
+                        <p class="certificate-date">01/2025 - 06/2025</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+                <p class="section-subtitle">Get In Touch</p>
+                <h2 class="section-title center">Contact Me</h2>
+                <p class="mb-5" style="max-width: 700px; margin: 0 auto; color: rgba(255, 255, 255, 0.8);">Have a project in mind or want to discuss opportunities? Feel free to reach out through any of the channels below.</p>
+            </div>
+            
+            <div class="contact-info-container">
+                <div class="contact-card" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h4 class="contact-title">Location</h4>
+                    <p class="contact-details">Dubai, United Arab Emirates</p>
+                    <a href="https://maps.google.com/?q=Dubai+United+Arab+Emirates" target="_blank" class="btn btn-outline-primary">View on Map</a>
+                </div>
+                
+                <div class="contact-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h4 class="contact-title">Phone</h4>
+                    <p class="contact-details">+971 54 540 0139</p>
+                    <p class="contact-details">+91 70257 20822</p>
+                    <a href="tel:+971545400139" class="btn btn-primary">Call Now</a>
+                </div>
+                
+                <div class="contact-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h4 class="contact-title">WhatsApp</h4>
+                    <p class="contact-details">Direct message for quick response</p>
+                    <a href="https://wa.me/message/5GCBO5SWJCIAD1" target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Message on WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <h4 class="mb-4">Connect with me on social media</h4>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/jithin-nelson-3340101bb" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/jithinnelson2-ui" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/1GuMktKkgG/" target="_blank" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/jithin_.nelson?igsh=MWp4cW9kbHl1NnE1ag==" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="mailto:jithinnelson2@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Jithin Nelson</h5>
+                    <p style="color: rgba(255, 255, 255, 0.7);">Full-Stack Developer with expertise in Shopify development, digital marketing, and social media strategy. Creating high-converting, visually engaging solutions for businesses worldwide.</p>
+                    <div class="social-links mt-4">
+                        <a href="https://linkedin.com/in/jithin-nelson-3340101bb" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/jithinnelson2-ui" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/1GuMktKkgG/" target="_blank" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/jithin_.nelson?igsh=MWp4cW9kbHl1NnE1ag==" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4 mb-lg-0">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4 mb-lg-0">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="#services">Shopify Development</a></li>
+                        <li><a href="#services">Full-Stack Development</a></li>
+                        <li><a href="#services">Digital Marketing</a></li>
+                        <li><a href="#services">Social Media Content</a></li>
+                        <li><a href="#services">E-commerce Optimization</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Dubai, UAE</li>
+                        <li><i class="fas fa-envelope mr-2"></i> jithinnelson2@gmail.com</li>
+                        <li><i class="fas fa-phone mr-2"></i> +971 54 540 0139</li>
+                        <li><i class="fab fa-whatsapp mr-2"></i> WhatsApp Available</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Jithin Nelson. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        $(document).ready(function(){
+            // Navbar background change on scroll
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            $("a").on('click', function(event) {
+                if (this.hash !== "" && $(this).attr("href").charAt(0) === "#") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top - 80
+                    }, 800, function(){
+                        window.location.hash = hash;
+                    });
+                }
+            });
+            
+            // Timeline item visibility on scroll
+            function checkTimelineVisibility() {
+                $('.timeline-item').each(function() {
+                    var elementTop = $(this).offset().top;
+                    var elementBottom = elementTop + $(this).outerHeight();
+                    var viewportTop = $(window).scrollTop();
+                    var viewportBottom = viewportTop + $(window).height();
+                    
+                    if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                        $(this).addClass('visible');
+                    }
+                });
+            }
+            
+            // Check timeline visibility on scroll
+            $(window).scroll(function() {
+                checkTimelineVisibility();
+            });
+            
+            // Initial check
+            checkTimelineVisibility();
+            
+            // Initialize tooltips
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</body>
+
+</html>
